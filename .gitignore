@@ -8,3 +8,11 @@ dist
 win/launch4j
 win/ColorOracle.exe
 win/ColorOracle.zip
+
+target
+.idea
+*.iml
+
+.classpath
+.project
+.settings/
