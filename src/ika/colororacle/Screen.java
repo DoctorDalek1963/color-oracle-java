@@ -124,7 +124,11 @@ final class Screen {
             createSimulationWindow(colorOracle);
         }
         simulationWindow.setImage(simulationImage);
-        simulationWindow.setPanel(panel);
+
+        // NOTE: This line would display the label panel in the middle of the
+        // screen. I couldn't be bothered to offset it to the bottom corner or
+        // something, so I just commented it out
+        //simulationWindow.setPanel(panel);
 
         // Bring our application to the foreground. This discussion is for
         // frames, not dialogs:
