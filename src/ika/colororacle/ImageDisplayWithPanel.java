@@ -117,7 +117,12 @@ public class ImageDisplayWithPanel extends ImageDisplay
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        colorOracle.switchToNormalVision();
+        if (pointOnPanel(e.getPoint()) && e.getButton() == 3) {
+            panel = null;
+            repaint();
+        } else {
+            colorOracle.switchToNormalVision();
+        }
     }
 
     @Override
@@ -151,7 +156,7 @@ public class ImageDisplayWithPanel extends ImageDisplay
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        if (!dragging) {
+        if (!dragging || panel == null) {
             return;
         }
 
@@ -205,6 +210,10 @@ public class ImageDisplayWithPanel extends ImageDisplay
      * Returns true if the passed point is inside the panel, false otherwise.
      */
     private boolean pointOnPanel(Point point) {
+        if (panel == null) {
+            return false;
+        }
+
         final int w = panel.getWidth(null);
         final int h = panel.getHeight(null);
         if (point.x < panelLeft || point.x > panelLeft + w) {
