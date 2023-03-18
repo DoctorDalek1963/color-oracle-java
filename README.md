@@ -1,3 +1,5 @@
+This repo was forked from [Alanocallaghan's fork](https://github.com/Alanocallaghan/color-oracle-java).
+
 ![image](https://colororacle.org/rw_common/images/icon48x48.png)
 
 # Color Oracle
